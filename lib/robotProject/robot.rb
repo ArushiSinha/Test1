@@ -1,27 +1,13 @@
 class Robot
 
-  @position = ["NORTH","WEST","SOUTH","EAST"]  
 
 	def initialize(xcoord, ycoord, orientation)
 		@xcoord = xcoord
 		@xcoord = ycoord
 		@orientation = orientation
-	
 	end
 
-	def get_coordinates(xcoord, ycoord)
-    @xcoord = xcoord
-		@xcoord = ycoord
-    
-  end
-
-  def get_orientation(orientation)
-  	 @orientation = orientation
-  end
-
-
-
-  def LEFT
+	def LEFT
   	if @orientation == "NORTH"
 			@orientation = "WEST"
 			
@@ -32,16 +18,48 @@ class Robot
 			
 		elsif @orientation == "WEST"
 			@orientation = "SOUTH"
-		 end
+		end
 
-		 return @orientation
-		 
+		return @orientation
+
   end
 
-  
+  def RIGHT
+  	if @orientation == "NORTH"
+			@orientation = "EAST"
+			
+		elsif @orientation == "EAST"
+			@orientation = "SOUTH"
+		elsif @orientation == "SOUTH"
+			@orientation = "WEST"
+			
+		elsif @orientation == "WEST"
+			@orientation = "NORTH"
+		end
 
+		 return @orientation
+	end
+
+	def MOVE
+		@x = 0
+		@y = 0
+  	if @orientation == "NORTH"
+			@y = @ycoord + 1
+			
+		elsif @orientation == "EAST"
+			@xcoord += 1
+
+		elsif @orientation == "SOUTH"
+			@ycoord -=  1
+			
+		elsif @orientation == "WEST"
+			@xcoord +=   1
+
+		end
+
+		 
+	end
 end
-
 
 
 
