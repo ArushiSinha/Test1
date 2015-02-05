@@ -1,11 +1,15 @@
 class Robot
 
+	   attr_reader :xcoord, :ycoord, :orientation
+
 
 	def initialize(xcoord, ycoord, orientation)
 		@xcoord = xcoord
 		@xcoord = ycoord
 		@orientation = orientation
 	end
+
+
 
 	def LEFT
   	if @orientation == "NORTH"
@@ -40,25 +44,7 @@ class Robot
 		 return @orientation
 	end
 
-	def MOVE
-		@x = 0
-		@y = 0
-  	if @orientation == "NORTH"
-			@y = @ycoord + 1
-			
-		elsif @orientation == "EAST"
-			@xcoord += 1
-
-		elsif @orientation == "SOUTH"
-			@ycoord -=  1
-			
-		elsif @orientation == "WEST"
-			@xcoord +=   1
-
-		end
-
-		 
-	end
+	
 end
 
 
